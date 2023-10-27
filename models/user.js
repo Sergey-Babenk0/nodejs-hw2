@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const Jimp = require("jimp");
 const Joi = require("joi");
 
 const { handleMongooseError } = require("../helpers");
@@ -26,6 +27,10 @@ const userSchema = new Schema(
     token: {
       type: String,
       default: null,
+    },
+    avatarURL: {
+      type: String,
+      reguired: true,
     },
   },
   { versionKey: false, timestamps: true }
